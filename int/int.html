@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./intglo.css" />
+    <link rel="stylesheet" href="./int.css" />
+
+    <title>Interest Selection Page</title>
+    
+</head>
+<body>
+    <div class="title">
+    <h1>Explore and Select Your Interests</h1>
+    <h3>Pick Your Top 5 Interests</h3>
+    </div>
+    <img class="kolo" src="logo.png">
+    <form>
+        <div class="content">
+        <div class="interest-group">
+            <label class="Heading">Extracurricular activities</label>
+            <br><br>
+            <input type="button" name="interest[]" value="Sports" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Dance" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Debate" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Clubs" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Theatre" onclick="toggleInterest(this)">
+        </div>
+
+        <div class="interest-group">
+            <label class="Heading">Community Service and Volunteerism</label>
+            <br><br>
+            <input type="button" name="interest[]" value="Volunteer at local Organizations" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Participate in Fundraising Events" onclick="toggleInterest(this)">
+        </div>
+
+        <div class="interest-group">
+            <label class="Heading">Entrepreneurship and Innovation</label>
+            <br><br>
+            <input type="button" name="interest[]" value="Startup Ventures" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Business Competition" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Developing Entrepreneurial Skill" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Entrepreneurship Workshop" onclick="toggleInterest(this)">
+        </div>
+
+        <div class="interest-group">
+            <label class="Heading">Arts and Creativity</label>
+            <br><br>
+            <input type="button" name="interest[]" value="Painting" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Photography" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Graphic design" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Artclub" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Creative Workshop" onclick="toggleInterest(this)">
+        </div>
+
+        <div class="interest-group">
+            <label class="Heading">Travel and Exploration</label>
+            <br><br>
+            <input type="button" name="interest[]" value="Travelling" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Backpacking" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Studying abroad" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Exchange Programs" onclick="toggleInterest(this)">
+        </div>
+
+        
+
+        <div class="interest-group">
+            <label class="Heading">Personal Development</label>
+            <br><br>
+            <input type="button" name="interest[]" value="Mindfulness" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Meditation" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Time Management" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Personal Finance" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Public Speaking" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Leadership Development" onclick="toggleInterest(this)">
+        </div>
+
+        <div class="interest-group">
+            <label class="Heading">Technology and Innovation</label>
+            <br><br>
+            <input type="button" name="interest[]" value="Coding" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Software Development" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="App Development" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Robotics" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Articial Intelligence" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="TechRelated Activities" onclick="toggleInterest(this)">
+        </div>
+
+        <div class="interest-group">
+            <label class="Heading">Sports and Fitness</label>
+            <br><br>
+            <input type="button" name="interest[]" value="Intramural Sports Team" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Outdoor Activities" onclick="toggleInterest(this)">
+            <input type="button" name="interest[]" value="Gym" onclick="toggleInterest(this)">
+        </div>
+</div>
+        <br><br>
+        <button onclick="proceedToStep2()">Submit</button>
+    </form>
+
+    <script>
+        const MAX_INTERESTS = 5;
+        const selectedInterests = new Set();
+
+        function toggleInterest(button) {
+            if (button.classList.contains('selected')) {
+                selectedInterests.delete(button.value);
+                button.classList.remove('selected');
+            } else {
+                if (selectedInterests.size >= MAX_INTERESTS) {
+                    alert("You can only select up to 5 interests.");
+                    return;
+                }
+                selectedInterests.add(button.value);
+                button.classList.add('selected');
+            }
+        }
+
+        function proceedToStep2() {
+            const selectedCount = selectedInterests.size;
+            if (selectedCount === 0) {
+                alert("Please select at least one interest.");
+            } else {
+               
+                alert("You have selected " + selectedCount + " interests.");
+               
+            }
+        }
+    </script>
+</body>
+</html>
+
