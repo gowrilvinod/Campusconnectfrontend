@@ -47,7 +47,8 @@ body {
 
 .content {
   margin-left: 522px;
-  padding: 20px;
+padding: 20px;
+margin-top: -50px;
   
 }
 
@@ -59,7 +60,7 @@ body {
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   margin-top: 20px;
   margin-left: -248px;
   margin-right: 20px;
@@ -161,12 +162,12 @@ body {
   margin-right: 20px;
 }
 .interests{
-  margin-left: 294px;
-  margin-top: 27px;
-  background-color: #d3d3d3a3;
-  padding: 10px;
-  border-radius: 7px;
-  width:318px;
+  margin-left: 307px;
+margin-top: 27px;
+height:auto;
+padding: 20px;
+
+width:333px;
 }
 .profile-details  {
   font-size: 12px;
@@ -192,7 +193,7 @@ body {
 }
 
 .I2{
-  margin: 10px;
+  margin: 10px 0; /* Increase the vertical margin to add more space between interests */
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   height: 25px;
